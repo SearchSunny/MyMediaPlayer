@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+    <!-- 80%透明 -->
+    <color name="transparent_eight">#cc000000</color>
+    <!-- 60%透明 -->
+    <color name="transparent_six">#99000000</color>
+    <!-- 50%透明 -->
+    <color name="transparent_five">#7f000000</color>
+    <!-- 全透明 -->
+    <color name="transparent_all">#00000000</color>
+    <!-- 10%透明 -->
+    <color name="transparent_ten">#19000000</color>
+    <!-- 40%白色透明 -->
+    <color name="transparent_four">#66ffffff</color>
+    <!-- 新浪微博需要用的 -->
+    <color name="transparent">#00000000</color>
+    <color name="text_num_gray">#333</color>
+    <color name="dialog_title_blue">#9CCCF7</color>
+    <!-- 90%透明 -->
+    <color name="transparent_nine">#E5000000</color>
+</resources>

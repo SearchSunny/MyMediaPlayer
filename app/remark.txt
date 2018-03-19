@@ -1,0 +1,15 @@
+自定义播放器实现
+1、本地依赖SurfaceView+MediaPlayer
+
+2、辅助工具类MediaLoader(视频预加载,相当于一个管理类控制视频下载、停止。用于视频文件的加载相关逻辑,实现逻辑：一个主文件，多
+个蚂蚁(线程)，当蚂蚁满足下载量时写入主文件。播放时使用主文件。)
+内部类Ants:用于分段下载，属性包括MediaAnts线程，可在此定义多个MediaAnts进行下载(例如5个)
+内部类PartFileInfo：用于记录拆分的文件的信息
+
+3、辅助工具类线程类MediaAnts extends Thread(用于视频下载)
+
+4、辅助工具类MediaDataBase(视频数据库)，保存视频的下载状态及MD5后的视频url，用于判断视频是否已经下载完成。
+
+5、网络下载使用HttpURLConnection以字节流(InputStream)从网络读取内容写入(ByteArrayOutputStream)到本地
+
+6、接口MediaAntsListener提供下载数据当前进度、完成、错误等方法。

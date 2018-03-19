@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/media_background">
+
+        <Button
+            android:id="@+id/buttonWB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_wb_0" />
+
+        <Button
+            android:id="@+id/buttonPengyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/buttonWB"
+            android:background="@drawable/button_wxfreind_0" />
+
+        <Button
+            android:id="@+id/buttonQQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonPengyou"
+            android:layout_marginLeft="92dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_qq_0" />
+
+        <Button
+            android:id="@+id/buttonWX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/buttonPengyou"
+            android:background="@drawable/button_wx_0" />
+
+        <Button
+            android:id="@+id/buttonEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonWB"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_email_0" />
+
+        <Button
+            android:id="@+id/buttonSms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonWX"
+            android:layout_marginLeft="165dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_sms_0" />
+
+    </RelativeLayout>
+</LinearLayout>

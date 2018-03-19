@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyMediaPlayer</string>
+
+    <!-- 网络状态提示 -->
+    <string name="reminder_no_net">网络连接不存在\n请检查网络连接是否正常</string>
+    <string name="net_busying">网络繁忙\n请稍候重试</string>
+    <string name="wait">处理中,请稍候...</string>
+
+    <!-- 手势提示 -->
+    <string name="gesture_title">手势面板</string>
+    <string name="gesture_load_false">手势文件加载失败</string>
+</resources>

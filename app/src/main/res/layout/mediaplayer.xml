@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <!-- 视频logo -->
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@+id/videoLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="60px"
+            android:layout_marginLeft="55px"
+            android:background="@drawable/ic_launcher"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rctrlscreen"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingBottom="5dp">
+        <!-- 视频播放页面头信息start -->
+        <RelativeLayout
+            android:id="@+id/relativeLayout_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/media_titlebar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/media_titlebarbg"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:visibility="gone">
+
+                <!-- 后退 -->
+                <Button
+                    android:id="@+id/titlebar_backbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/media_backbutton_0" />
+                <!-- 分享 -->
+                <Button
+                    android:id="@+id/titlebar_menubutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/media_sharebtn"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/titlebar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/titlebar_menubutton"
+                    android:layout_toRightOf="@id/titlebar_backbutton"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <TextView
+                        android:id="@+id/titlebar_titletext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:singleLine="true"
+                        android:text="标题"
+                        android:textColor="#ccffffff"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/media_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/media_titlebar"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:visibility="invisible">
+
+                <ListView
+                    android:id="@+id/media_sharelist"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/media_sharebg"
+                    android:cacheColorHint="@color/transparent_all"
+                    android:listSelector="@color/transparent_all" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <!-- 视频播放页面头信息end -->
+
+
+        <!-- 播放控制器 -->
+        <RelativeLayout
+            android:id="@+id/relativeLayout_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+
+                <RelativeLayout
+                    android:id="@+id/media_ctrlbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/media_ctrlbarbg"
+                    android:paddingTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/lbuttonbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingTop="5dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="18dp"
+                            android:visibility="gone">
+
+                            <Button
+                                android:id="@+id/media_likebtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/media_likebtn" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="27dp">
+
+                            <Button
+                                android:id="@+id/media_prebtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/media_prebtn_0" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="27dp">
+
+                            <Button
+                                android:id="@+id/media_playbtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/media_pausebtn_0" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="27dp">
+
+                            <Button
+                                android:id="@+id/media_nextbtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/media_nextbtn_0" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <Button
+                                android:id="@+id/media_lookbtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/media_lookbtn_0" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lbuttonbar"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/lcurtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:paddingRight="5dp">
+
+                            <TextView
+                                android:id="@+id/curtime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="00:00"
+                                android:textColor="#ffffffff"
+                                android:textSize="16dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lmaxtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="5dp">
+
+                            <TextView
+                                android:id="@+id/maxtime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="00:00"
+                                android:textColor="#ffffffff"
+                                android:textSize="16dp" />
+                        </LinearLayout>
+
+                        <SeekBar
+                            android:id="@+id/seekbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/lmaxtime"
+                            android:layout_toRightOf="@id/lcurtime"
+                            android:maxHeight="8dp"
+                            android:minHeight="8dp"
+                            android:progressDrawable="@drawable/seekbar_style"
+                            android:thumb="@drawable/thumb"
+                            android:thumbOffset="0dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- 快进或后退提示时间 -->
+    <com.mymediaplayer.plug.PopNumView
+        android:id="@+id/popnumview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/rprogress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/loading_media"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <!-- 手势操作start -->
+    <RelativeLayout
+        android:id="@+id/gesture01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/transparent_eight"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/gesture1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gesture1"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/gesture2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gesture1"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/gesture2"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/gesture3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/gesture1"
+            android:background="@drawable/gesture3"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/gesture4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gesture3"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@id/gesture2"
+            android:background="@drawable/gesture4"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/gesture5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gesture4"
+            android:layout_marginLeft="-20dp"
+            android:layout_toRightOf="@id/gesture4"
+            android:background="@drawable/gesture_5"
+            android:visibility="visible" />
+    </RelativeLayout>
+    <!-- 手势操作end -->
+</FrameLayout>
